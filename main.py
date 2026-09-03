@@ -4,49 +4,41 @@ import json
 
 
 
+import json
+
 while True:
     A = input("Hast du bereits ein Konto(Yes/No) ")
 
     if A == "No":
         NewUsername = input("Plaese enter your new Username")
-        
         NewPassword = input("Please enter your new Passwort ")
 
         daten = {
-        "Username" : NewUsername,
-        "Password" : NewPassword
-
+            "Username": NewUsername,
+            "Password": NewPassword
         }
 
-        with open("daten.json" , "w" ,encoding="utf-8" ) as f:
-            json.dump(daten, f,ensure_ascii=False, indent=4 )
+        with open("daten.json", "w", encoding="utf-8") as f:
+            json.dump(daten, f, ensure_ascii=False, indent=4)
 
-        break
+    # Ab hier läuft der Code immer durch (egal ob "Yes" oder nach der Registrierung bei "No")
+    with open("daten.json", "r", encoding="utf-8") as f:
+        daten = json.load(f)
 
-    else:
+    Username = daten["Username"]
+    Password = daten["Password"]
 
-        
-        while True:
+    while True:
+        EingabeUsername = input("Plaese enter your Username")
+        EingabePassword = input("Please enter your Passwort ")
 
-            with open("daten.json", "r", encoding="utf-8") as f:
-                daten = json.load(f)
+        if EingabeUsername == Username and EingabePassword == Password:
+            print("Login erfolgreich!")
+            break
+        else:
+            print("Username or Password false, try again.")
 
-            Username = daten["Username"]
-            Password = daten["Password"]
-
-
-
-
-            EingabeUsername = input("Plaese enter your Username")
-
-            EingabePassword = input("Please enter your Passwort ")
-
-            if EingabeUsername == Username and EingabePassword == Password:
-                print("Login erfolgreich!")
-                break
-            else:
-             print("Username or Password false, try again.")
-
+    break  # Beendet die äußere Schleife nach erfolgreichem Login
         
 
 
