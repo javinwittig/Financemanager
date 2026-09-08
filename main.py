@@ -55,11 +55,11 @@ while True:
 
     Frage = input("Enter your Choice: ")
 
-    if Frage == "1":
-        if Frage == "1":
+    if Frage == "1":  
+       
             transaction = input("Enter the date of the transaction (dd-mm-yyyy) or press Enter for today: ")
             if transaction == "":
-                datum = date.today()
+                datum = date.today().strftime("%d-%m-%Y")
             else:
                 datum = transaction
 
@@ -75,9 +75,42 @@ while True:
                 writer.writerows(toWrite)
 
     elif Frage == "2":
-        df=pd.read_csv('finance_data.csv',index_col=False)
-        print(df)
+        df = pd.read_csv('finance_data.csv', index_col=False)
+        df["datum"] = pd.to_datetime(df["datum"], format="%d-%m-%Y")   # NEU: Datum korrekt umwandeln
 
+        Start = input("Enter the start date(dd-mm-yyyy)")
+        End = input("Enter the end date (dd-mm-yyyy)")
+
+        start_date = pd.to_datetime(Start, format="%d-%m-%Y")
+        end_date = pd.to_datetime(End, format="%d-%m-%Y")
+
+        filtered_df = df[(df["datum"] >= start_date) & (df["datum"] <= end_date)]
+
+        filtered_df_display = filtered_df.copy()
+        filtered_df_display['datum'] = filtered_df_display['datum'].dt.strftime('%d-%m-%Y')
+
+        print("\n--- Filtered Transactions ---")
+        print(filtered_df_display)
+
+        # Zusammenfassung (Summary) berechnen
+        total_income = filtered_df[filtered_df['category'] == 'Income']['amount'].astype(float).sum()
+        total_expense = filtered_df[filtered_df['category'] == 'Expense']['amount'].astype(float).sum()
+        net_savings = total_income - total_expense
+
+        print("\n--- Zusammenfassung ---")
+        print(f"Total income: {total_income:.2f}")
+        print(f"Total expense:  {total_expense:.2f}")
+        print(f"Savings: {net_savings:.2f}\n")
+
+    else:
+        print("Program is getting closed")
+        break
+
+   
+        
+
+
+       
 
 
 
