@@ -56,48 +56,68 @@ while True:
     Frage = input("Enter your Choice: ")
 
     if Frage == "1":
-        transaction = input("Enter the date of the transachtion (dd-mm-yyyy) or press Enter for today")
-        if transaction == "":
-            datum = date.today()
+        if Frage == "1":
+            transaction = input("Enter the date of the transaction (dd-mm-yyyy) or press Enter for today: ")
+            if transaction == "":
+                datum = date.today()
+            else:
+                datum = transaction
+
             amount = input("Enter the amount: ")
-            category = input ("Enter the category (I for income, E for Expense): ")
-            description= input ("Enter a description:")
+            category_input = input("Enter the category (I for income, E for Expense): ").strip().upper()
+            category = "Income" if category_input == "I" else "Expense"
+            description = input("Enter a description: ")
 
+            toWrite = [[datum, amount, category, description]]
 
-            toWrite = [
-                ["datum","amount","category","description"],
-                [datum,amount,category,description]
-            ]  
-
-            file = open('finance_data.csv', 'w') 
-
-            with file:
+            with open('finance_data.csv', 'a', newline='') as file:
                 writer = csv.writer(file)
+                writer.writerows(toWrite)
 
-            for row in toWrite:
-                writer.writerow(row)
-
-        else:
-            datum = transaction
-            amount = input("Enter the amount: ")
-            category = input ("Enter the category (I for income, E for Expense): ")
-            description= input ("Enter a description:")
+    elif Frage == "2":
+        df=pd.read_csv('finance_data.csv',index_col=False)
+        print(df)
 
 
-            toWrite = [
-                ["datum","amount","category","description"],
-                [datum,amount,category,description]
-            ]  
-            
-            file = open('finance_data.csv', 'w') 
-            
-            with file:
-                writer = csv.writer(file)
-            
-            for row in toWrite:
-                writer.writerow(row)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+           
 
 
 
