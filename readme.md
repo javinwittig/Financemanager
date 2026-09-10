@@ -1,4 +1,4 @@
-# FInance Manager
+# Finance Manager
 
 I made a Finance Manager in python which you can use in the command line for managing your personal finances
 
