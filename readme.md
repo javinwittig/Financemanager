@@ -5,6 +5,7 @@ I made a Finance Manager in python which you can use in the command line for man
 # Features
 
   <img src="Assets/Features.png" alt="Confusion Matrix" width="500">
+
 ## Account creation
 
 When you use it for the first time, you can crate a username and password which is locally storde in a json datei
