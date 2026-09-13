@@ -32,7 +32,7 @@ from datetime import date
 
 ## How to install
 
-just download the main.py file and all the requirements
+https://github.com/javinwittig/Financemanager/releases/download/Financemanager_v1.0.0/main.exe
 
 
 
