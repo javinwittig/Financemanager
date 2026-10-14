@@ -32,7 +32,7 @@ from datetime import date
 
 ## How to install
 
-https://github.com/javinwittig/Financemanager/releases/download/Financemanager_v1.0.0/main.exe
+https://github.com/javinwittig/Financemanager/releases/tag/Financemanager_v1.0.0
 
 
 
