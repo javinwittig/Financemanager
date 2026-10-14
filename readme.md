@@ -1,38 +1,48 @@
 # Finance Manager
 
-I made a Finance Manager in python which you can use in the command line for managing your personal finances
+A command-line finance manager written in Python for managing your personal finances.
 
-# Features
+## Features
 
-  <img src="Assets/Features.png" alt="Confusion Matrix" width="500">
-
-## Account creation
-
-When you use it for the first time, you can crate a username and password which is locally stored in a json file that automatically gets created for you
-
-## Add custom transaction 
-
-You can add new income or expense with a date, amonut, category and custom description.
-
-## Transaction date range
-
-Another feature is transaction tracking with a custom date range, alongside a summary showing total income, total expenses, and savings. All transactions are continuously saved to finance_data.csv, which is automatically created for you
-
+- **Account creation:** On first use you can create a username and password. They are stored locally in a JSON file (`daten.json`) that is created automatically.
+- **Add custom transactions:** Add income or expenses with a date, amount, category and custom description.
+- **Transaction date range:** View all transactions within a custom date range, together with a summary of total income, total expenses and savings.
+- **Automatic saving:** All transactions are saved to `finance_data.csv`, which is also created automatically.
 
 ## Requirements
 
-
-import json
-
-import pandas as pd
-
-import csv
-
-from datetime import date
+None. No Python installation needed, everything is bundled in the download.
 
 ## How to install
 
-https://github.com/javinwittig/Financemanager/releases/tag/Financemanager_v1.0.0
+1. Go to the [latest release](https://github.com/javinwittig/Financemanager/releases/tag/v1.0.1).
+2. Download the file for your operating system.
+3. Put it in its own folder, because the program creates `daten.json` and `finance_data.csv` next to it.
+4. Run it:
 
+| OS | File | How to run |
+|---|---|---|
+| Windows | `financemanager-windows.exe` | Double-click. If SmartScreen warns you, click "More info" → "Run anyway". |
+| macOS | `financemanager-macos.tar.gz` | Extract, then open Terminal in that folder and run `./financemanager`. On the first start macOS may block the unsigned app: right-click → Open. |
+| Linux | `financemanager-linux.tar.gz` | Extract, then run `./financemanager` in a terminal. |
 
+The first start can take a few seconds.
 
+## Usage
+
+1. Answer `No` on the first start and create your account (or `Yes` if you already have one) and log in.
+2. Choose from the menu:
+   1. Add a new transaction
+   2. View transactions within a date range and summary
+   3. Exit
+
+## Note
+
+The password is stored in plain text in `daten.json`. This is a learning project, so please do not use a password you use elsewhere.
+
+## Run from source
+
+```
+pip install pandas
+python main.py
+```
