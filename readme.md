@@ -22,17 +22,11 @@ Another feature is transaction tracking with a custom date range, alongside a su
 ## Requirements
 
 
-import json
-
-import pandas as pd
-
-import csv
-
-from datetime import date
+Just download it and run it
 
 ## How to install
 
-https://github.com/javinwittig/Financemanager/releases/tag/Financemanager_v1.0.0
+https://github.com/javinwittig/Financemanager/releases/tag/v1.0.1
 
 
 
