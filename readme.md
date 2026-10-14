@@ -8,7 +8,7 @@ A command-line finance manager written in Python for managing your personal fina
 - **Add custom transactions:** Add income or expenses with a date, amount, category and custom description.
 - **Transaction date range:** View all transactions within a custom date range, together with a summary of total income, total expenses and savings.
 - **Automatic saving:** All transactions are saved to `finance_data.csv`, which is also created automatically.
- <img src="renders/Blender_Render.png" alt="Confusion Matrix" width="500">
+ <img src="Financemanager.png" alt="Confusion Matrix" width="500">
 ## Requirements
 
 
