@@ -20,7 +20,7 @@ None. No Python installation needed, everything is bundled in the download.
 2. Download the file for your operating system.
 3. Put it in its own folder, because the program creates `daten.json` and `finance_data.csv` next to it.
 4. Run it:
-=======
+
 
 Just download it and run it
 
