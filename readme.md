@@ -11,7 +11,7 @@ A command-line finance manager written in Python for managing your personal fina
 
 ## Requirements
 
-<<<<<<< HEAD
+
 None. No Python installation needed, everything is bundled in the download.
 
 ## How to install
@@ -27,7 +27,7 @@ Just download it and run it
 ## How to install
 
 https://github.com/javinwittig/Financemanager/releases/tag/v1.0.1
->>>>>>> dc23828f8a0da04c4dd479ee7fbb8b1262539030
+
 
 | OS | File | How to run |
 |---|---|---|
@@ -49,9 +49,3 @@ The first start can take a few seconds.
 
 The password is stored in plain text in `daten.json`. This is a learning project, so please do not use a password you use elsewhere.
 
-## Run from source
-
-```
-pip install pandas
-python main.py
-```
