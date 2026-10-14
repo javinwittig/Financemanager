@@ -41,10 +41,16 @@ The first start can take a few seconds, please wait
 
 1. Answer `No` on the first start and create your account (or `Yes` if you already have one) and log in.
 2. Choose from the menu:
-   1. Add a new transaction
-   2. View transactions within a date range and summary
-   3. Exit
 
+
+
+
+(1)  Add a new transaction
+
+(2)  View transactions within a date range and summary
+
+(3)  Exit
+   
 ## Note
 
 The password is stored in plain text in `daten.json`. This is a learning project, so please do not use a password you use elsewhere.
