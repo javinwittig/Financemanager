@@ -3,10 +3,12 @@ import json
 import pandas as pd
 import csv
 from datetime import date
+import os
+
 
 
 while True:
-    A = input("Hast du bereits ein Konto(Yes/No) ")
+    A = input("Do you already have an account(Yes/No) ")
 
     if A == "No":
         NewUsername = input("Plaese enter your new Username: ")
@@ -36,7 +38,7 @@ while True:
         EingabePassword = input("Please enter your Passwort: ")
 
         if EingabeUsername == Username and EingabePassword == Password:
-            print("Login erfolgreich!")
+            print("Login successful!")
             break
         else:
             print("Username or Password false, try again.")
@@ -70,10 +72,19 @@ while True:
 
             toWrite = [[datum, amount, category, description]]
 
-            with open('finance_data.csv', 'a', newline='') as file:
+            file_exists = os.path.exists('finance_data.csv')
+
+            with open('finance_data.csv', 'a', newline='', encoding='utf-8') as file:
                 writer = csv.writer(file)
+  
+                if not file_exists:
+                    writer.writerow(["datum", "amount", "category", "description"])
                 writer.writerows(toWrite)
 
+    
+    
+      
+    
     elif Frage == "2":
         df = pd.read_csv('finance_data.csv', index_col=False)
         df["datum"] = pd.to_datetime(df["datum"], format="%d-%m-%Y")   # NEU: Datum korrekt umwandeln
@@ -92,12 +103,12 @@ while True:
         print("\n--- Filtered Transactions ---")
         print(filtered_df_display)
 
-        # Zusammenfassung (Summary) berechnen
+        
         total_income = filtered_df[filtered_df['category'] == 'Income']['amount'].astype(float).sum()
         total_expense = filtered_df[filtered_df['category'] == 'Expense']['amount'].astype(float).sum()
         net_savings = total_income - total_expense
 
-        print("\n--- Zusammenfassung ---")
+        print("\n--- summary ---")
         print(f"Total income: {total_income:.2f}")
         print(f"Total expense:  {total_expense:.2f}")
         print(f"Savings: {net_savings:.2f}\n")
