@@ -1,0 +1,6 @@
+build/
+dist/
+*.spec
+daten.json
+finance_data.csv
+__pycache__/
