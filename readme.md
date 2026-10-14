@@ -11,6 +11,7 @@ A command-line finance manager written in Python for managing your personal fina
 
 ## Requirements
 
+<<<<<<< HEAD
 None. No Python installation needed, everything is bundled in the download.
 
 ## How to install
@@ -19,6 +20,14 @@ None. No Python installation needed, everything is bundled in the download.
 2. Download the file for your operating system.
 3. Put it in its own folder, because the program creates `daten.json` and `finance_data.csv` next to it.
 4. Run it:
+=======
+
+Just download it and run it
+
+## How to install
+
+https://github.com/javinwittig/Financemanager/releases/tag/v1.0.1
+>>>>>>> dc23828f8a0da04c4dd479ee7fbb8b1262539030
 
 | OS | File | How to run |
 |---|---|---|
