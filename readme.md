@@ -35,7 +35,7 @@ https://github.com/javinwittig/Financemanager/releases/tag/v1.0.1
 | macOS | `financemanager-macos.tar.gz` | Extract, then open Terminal in that folder and run `./financemanager`. On the first start macOS may block the unsigned app: right-click → Open. |
 | Linux | `financemanager-linux.tar.gz` | Extract, then run `./financemanager` in a terminal. |
 
-The first start can take a few seconds.
+The first start can take a few seconds, please wait
 
 ## Usage
 
